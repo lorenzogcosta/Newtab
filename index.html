@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <title>Controle Financeiro</title>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            width: auto;
+            background-color: #E0E0E0;
+            display: flex;
+            color: #333;
+            justify-content: space-between;
+            padding: 10px;
+            align-items: center;
+        }
+
+        .menu-hamburguer {
+
+            width: 20px;
+            height: auto;
+            padding: 5px;
+        }
+
+        .menu-hamburguer div {
+            width: 25px;
+            height: 3px;
+            background-color: #0a0a0a;
+            margin: 6px 0;
+        }
+
+
+        form {
+            display: grid;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+
+        }
+
+        #buttonadicionar {
+            background: #333333;
+            border-radius: 4px;
+            color: #FFFFFF;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="./assets/imagens/logo.svg" alt="logo">
+        <span>Controle Financeiro</span>
+        <div class="menu-hamburguer">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+    </div>
+
+    <div class="form">
+        <form action="">
+            <label for="transacao">Tipo de transacao:</label>
+            <select name="seletor-transacao" id="transacao">
+                <option value="compra">Compra</option>
+                <option value="venda">Venda</option>
+            </select>
+            <label for="mercadoria"> Nome da mercadoria</label>
+            <input type="text" id="mercadoria" name="mercadoria" placeholder="Insira a mercadoria">
+            <label for="valormercadoria">Valor</label>
+            <input type="number" id="valormercadoria" placeholder="R$ 0,00">
+            <input type="submit" value="Adicionar Transacao" id="buttonadicionar">
+        </form>
+
+    </div>
+
+
+
+</body>
+
+</html>
