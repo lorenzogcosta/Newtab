@@ -1,0 +1,275 @@
+        
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            background-color: #E0E0E0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .header span {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+
+        }
+
+        .menu-hamburguer {
+
+            width: 20px;
+            height: auto;
+            padding: 5px;
+        }
+
+        .menu-hamburguer div {
+            width: 25px;
+            height: 3px;
+            background-color: #0a0a0a;
+            margin: 6px 0;
+        }
+
+        form label {
+            padding: 5px;
+        }
+
+        form {
+            display: grid;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+            border-bottom: 1px solid #979797;
+            padding-bottom: 20px;
+            margin: 20px;
+            max-width: 1100px;
+
+        }
+
+        #buttonadicionar {
+            background: #333333;
+            border-radius: 4px;
+            color: #FFFFFF;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 8px;
+        }
+
+        .menuresponsivo ul {
+
+            display: none;
+            background-color: #333333;
+            color: white;
+            width: 85vw;
+            height: 100%;
+            list-style-type: none;
+            position: fixed;
+            right: 0px;
+            top: 0px;
+            margin-top: 0px;
+            padding: 20px 0px;
+
+
+        }
+
+        .menuresponsivo ul li {
+
+            text-align: right;
+            margin: 7px 0px;
+            padding: 0px 20px;
+
+        }
+
+        .menuresponsivo ul li:nth-child(1) {
+            text-align: left;
+        }
+
+
+
+        .extratodetransacoes {
+
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            display: contents;
+
+        }
+
+        table {
+            width: 100%;
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+     
+
+        .bordertd {
+            border-bottom: 1px solid #979797;
+        }
+        .borderdouble{
+            border-bottom: double #979797;
+        }
+
+        .tdlucro{
+            text-align: end;
+        }
+
+        td{
+            font-size: 16px;
+        }
+
+
+        /*  MOBILE VERSION */
+
+        @media screen and (max-width:411px) {
+
+
+            .menuresponsivo ul li:hover {
+
+                background-color: #c4c4c4;
+                color: #333;
+
+            }
+
+            .menuresponsivo:hover ul {
+                display: block;
+            }
+
+            .menuresponsivo ul:hover li:nth-child(1) {
+                background-color: #333;
+                color: white;
+            }
+
+            form h3 {
+
+                display: none;
+            }
+
+            form br {
+                display: none;
+            }
+
+
+        }
+
+        /* TABLET PORTRAIT VERSION */
+
+        @media screen and (min-width:768px) and (max-width:1091px) {
+
+            .menuresponsivo ul {
+
+                display: none;
+                background-color: #333333;
+                color: white;
+                width: 30vw;
+                height: 100%;
+                list-style-type: none;
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                margin-top: 0px;
+                padding: 20px 0px;
+
+
+            }
+
+
+
+            form {
+                display: block;
+                font-family: Lato;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 22px;
+                border: 1px solid #333;
+                margin: 20px;
+                max-width: 1100px;
+                padding: 20px
+            }
+
+
+            form h3 {
+                text-align: center;
+            }
+
+            form label {
+                text-align: center;
+            }
+
+
+            .menuresponsivo ul li:hover {
+
+                background-color: #c4c4c4;
+                color: #333;
+
+            }
+
+            .menuresponsivo:hover ul {
+                display: block;
+            }
+
+            .menuresponsivo ul:hover li:nth-child(1) {
+                background-color: #333;
+                color: white;
+            }
+        }
+
+        /* NAVEGADOR VERSION */
+
+
+        @media screen and (min-width:1112px) {
+
+
+
+            .menuresponsivo ul {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                background-color: white;
+                color: #333;
+                width: 350px;
+                height: 40px;
+                margin-top: 20px;
+                padding: 0px;
+
+            }
+
+            .menuresponsivo ul li:nth-child(1) {
+                display: none;
+            }
+
+            .menu-hamburguer {
+                display: none;
+            }
+
+            .menuresponsivo ul li {
+                border-left: 1px solid #333;
+            }
+
+            .menuresponsivo ul li:nth-child(2) {
+
+                border: 0;
+            }
+
+            .menuresponsivo ul li:hover {
+
+                background-color: #c4c4c4;
+                color: #333;
+
+            }
+
+        }
+    
