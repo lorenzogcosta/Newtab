@@ -65,9 +65,7 @@
             margin-top: 8px;
         }
 
-        .menuresponsivo{
-            width: 25%;
-        }
+
 
         .menuresponsivo ul {
 
@@ -94,7 +92,9 @@
             word-spacing: 5px;
             height: 32px;
             padding: 0px 20px;
-            
+            padding-bottom: 15px;
+            padding-left: 20px;
+
         }
 
         .menuresponsivo ul li:nth-child(1) {
@@ -171,7 +171,7 @@
 
         /*  MOBILE VERSION */
 
-        @media screen and (max-width:411px) {
+        @media screen and (max-width:767px) {
 
 
             .menuresponsivo ul li:hover {
@@ -265,6 +265,10 @@
 
         @media screen and (min-width:1112px) {
 
+
+            .menuresponsivo {
+                width: 25%;
+            }
 
 
             .menuresponsivo ul {
