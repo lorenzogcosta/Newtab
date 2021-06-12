@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <title>Controle Financeiro</title>
 
 </head>
@@ -25,26 +25,34 @@
             </div>
             <ul>
                 <li>X</li>
-                <li>Resumo </li>
-                <li>Dashboard</li>
-                <li>Configuracoes</li>
+                <li>Cadastro de Transações </li>
+                <li>Limpar Dados</li>
+                <li>Salvar  no  Servidor</li>
             </ul>
         </div>
     </div>
     <div class="hero">
         <div class="form">
             <form action="">
-                <h3>Nova Transacao</h3>
-                <label for="transacao">Tipo de transação</label><br>
-                <select name="seletor-transacao" id="transacao">
-                    <option value="compra">Compra</option>
-                    <option value="venda">Venda</option>
-                </select>
-                <label for="mercadoria"> Nome da mercadoria</label><br>
-                <input type="text" id="mercadoria" name="mercadoria" placeholder=" Descreva a mercadoria">
-                <label for="valormercadoria">Valor</label><br>
-                <input type="number" id="valormercadoria" placeholder=" R$ 0,00">
-                <input type="submit" value="Adicionar Transação" id="buttonadicionar">
+                <h3>Nova Transação</h3>
+                <div class="containerform">
+                    <div>
+                        <label for="transacao">Tipo de transação</label>
+                        <select name="seletor-transacao" id="transacao">
+                            <option value="compra">Compra</option>
+                            <option value="venda">Venda</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mercadoria"> Nome da mercadoria</label>
+                        <input type="text" id="mercadoria" name="mercadoria" placeholder=" Descreva a mercadoria">
+                    </div>
+                    <div>
+                        <label for="valormercadoria">Valor</label>
+                        <input type="number" id="valormercadoria" placeholder=" R$ 0,00">
+                    </div>
+                    <input type="submit" value="Adicionar Transação" id="buttonadicionar">
+                </div>
             </form>
 
         </div>
@@ -57,37 +65,42 @@
                 <table class="tabelatransacoes">
                     <tbody>
                         <tr>
+                            <th></th>
                             <th>Mercadoria</th>
-                            <th>Valor</th>
+                            <th class="thleft">Valor</th>
                         </tr>
                         <tr>
                             <td class="bordertd" colspan="3"></td>
                         </tr>
                         <tr>
-                            <td>+ "valor mercadoria"</td>
-                            <td>$$$$</td>
+                            <td class="tdright">+</td>
+                            <td>valor mercadoria</td>
+                            <td class="tdleft">R$12.999,99</td>
                         </tr>
                         <tr>
                             <td class="bordertd" colspan="3"></td>
                         </tr>
                         <tr>
-                            <td>- "custos mercadoria"</td>
-                            <td>$$$</td>
+                            <td class="tdright">-</td>
+                            <td>custos mercadoria</td>
+                            <td class="tdleft">R$99,99</td>
                         </tr>
                         <tr>
                             <td class="bordertd" colspan="3"></td>
                         </tr>
                         <tr>
-                            <td>+ "taxa mercadoria"</td>
-                            <td>$$$</td>
+                            <td class="tdright">+</td>
+                            <td>taxa mercadoria</td>
+                            <td class="tdleft">R$9,99</td>
                         </tr>
-                    
+
                         <tr>
                             <td class="borderdouble" colspan="3"></td>
                         </tr>
                         <tr>
-                            <th>Total</th>
-                            
+                            <td></td>
+                            <td>Total</td>
+                            <td class="tdleft">R$12.909,99</td>
                         </tr>
                         <tr>
                             <td class="tdlucro" colspan="3">[Lucro]</td>

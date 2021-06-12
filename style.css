@@ -1,5 +1,3 @@
-        
-        
         body {
             font-family: 'Lato', sans-serif;
             margin: 0;
@@ -31,10 +29,10 @@
         }
 
         .menu-hamburguer div {
-            width: 25px;
-            height: 3px;
+            width: 18px;
+            height: 2px;
             background-color: #0a0a0a;
-            margin: 6px 0;
+            margin: 3px 0;
         }
 
         form label {
@@ -42,7 +40,7 @@
         }
 
         form {
-            display: grid;
+
             font-family: Lato;
             font-style: normal;
             font-weight: normal;
@@ -67,6 +65,10 @@
             margin-top: 8px;
         }
 
+        .menuresponsivo{
+            width: 25%;
+        }
+
         .menuresponsivo ul {
 
             display: none;
@@ -79,31 +81,38 @@
             right: 0px;
             top: 0px;
             margin-top: 0px;
-            padding: 20px 0px;
+            padding: 10px 0px;
 
 
         }
+
+
 
         .menuresponsivo ul li {
 
             text-align: right;
-            margin: 7px 0px;
+            word-spacing: 5px;
+            height: 32px;
             padding: 0px 20px;
-
+            
         }
 
         .menuresponsivo ul li:nth-child(1) {
             text-align: left;
+            width: 16px;
+            font-weight: bold;
+            font-size: x-large;
         }
 
 
 
         .extratodetransacoes {
 
-            position: absolute;
+
             width: 100%;
             text-align: center;
-            display: contents;
+            display: flex;
+            flex-direction: column;
 
         }
 
@@ -113,22 +122,51 @@
             padding-left: 20px;
             padding-right: 20px;
         }
-     
+
+
 
         .bordertd {
             border-bottom: 1px solid #979797;
         }
-        .borderdouble{
+
+        .borderdouble {
             border-bottom: double #979797;
         }
 
-        .tdlucro{
+        .tdlucro {
             text-align: end;
         }
 
-        td{
-            font-size: 16px;
+        td {
+            font-size: 14px;
         }
+
+        .tdleft {
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .tdright {
+            padding-left: 10px;
+        }
+
+        .thleft {
+            text-align: center;
+        }
+
+
+        .containerform {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .containerform div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
 
 
         /*  MOBILE VERSION */
@@ -156,11 +194,6 @@
 
                 display: none;
             }
-
-            form br {
-                display: none;
-            }
-
 
         }
 
@@ -271,5 +304,6 @@
 
             }
 
+
+
         }
-    
