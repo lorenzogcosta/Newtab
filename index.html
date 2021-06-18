@@ -13,22 +13,24 @@
 
 <body>
     <div class="header">
-        <img src="./assets/imagens/logo.svg" alt="logo">
-        <span>Controle Financeiro</span>
-        <div class="menuresponsivo">
-            <div class="menu-hamburguer">
+        <div class="contentheader">
+            <img src="./assets/imagens/logo.svg" alt="logo">
+            <span>Controle Financeiro</span>
+            <div class="menuresponsivo">
+                <div class="menu-hamburguer">
 
-                <div></div>
-                <div></div>
-                <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
 
+                </div>
+                <ul>
+                    <li>X</li>
+                    <li>Cadastro de Transações </li>
+                    <li>Limpar Dados</li>
+                    <li>Salvar no Servidor</li>
+                </ul>
             </div>
-            <ul>
-                <li>X</li>
-                <li>Cadastro de Transações </li>
-                <li>Limpar Dados</li>
-                <li>Salvar  no  Servidor</li>
-            </ul>
         </div>
     </div>
     <div class="hero">
@@ -36,18 +38,18 @@
             <form action="">
                 <h3>Nova Transação</h3>
                 <div class="containerform">
-                    <div>
+                    <div class="boxtransacao">
                         <label for="transacao">Tipo de transação</label>
                         <select name="seletor-transacao" id="transacao">
                             <option value="compra">Compra</option>
                             <option value="venda">Venda</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="boxmercadoria">
                         <label for="mercadoria"> Nome da mercadoria</label>
                         <input type="text" id="mercadoria" name="mercadoria" placeholder=" Descreva a mercadoria">
                     </div>
-                    <div>
+                    <div class="boxvalor">
                         <label for="valormercadoria">Valor</label>
                         <input type="number" id="valormercadoria" placeholder=" R$ 0,00">
                     </div>
