@@ -5,11 +5,12 @@
 
         }
 
-        .header{
+        .header {
             background-color: #E0E0E0;
         }
 
-         .contentheader, .hero{
+        .contentheader,
+        .hero {
 
             max-width: 1100px;
             margin: 0 auto;
@@ -19,7 +20,7 @@
         .contentheader {
             width: 100%;
             height: 60px;
-            
+
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -47,6 +48,7 @@
             margin: 3px 0;
         }
 
+
         form label {
             padding: 5px;
         }
@@ -61,8 +63,8 @@
             border-bottom: 1px solid #979797;
             padding-bottom: 20px;
             margin: 20px;
-            
-            
+
+
 
         }
 
@@ -70,12 +72,12 @@
             background: #333333;
             border-radius: 4px;
             color: #FFFFFF;
-            font-family: Inter;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 22px;
             margin-top: 8px;
+
         }
 
 
@@ -102,7 +104,6 @@
         .menuresponsivo ul li {
 
             text-align: right;
-            word-spacing: 5px;
             padding: 0px 20px;
             padding-bottom: 15px;
             padding-left: 20px;
@@ -111,6 +112,11 @@
             align-items: flex-end;
             padding-top: 15px;
 
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
         }
 
         .menuresponsivo ul li:nth-child(1) {
@@ -167,7 +173,8 @@
         }
 
         .thleft {
-            text-align: center;
+            text-align: end;
+            padding-right: 15px;
         }
 
 
@@ -184,7 +191,8 @@
         }
 
 
-        input,select {
+        input,
+        select {
             border-radius: 4px;
         }
 
@@ -220,8 +228,8 @@
         /* TABLET PORTRAIT VERSION */
 
         @media screen and (min-width:768px) and (max-width:1111px) {
-            
-            .contentheader{
+
+            .contentheader {
                 justify-content: space-between;
 
             }
@@ -236,16 +244,17 @@
 
             }
 
-            .menu-hamburguer{
+            .menu-hamburguer {
                 padding: 15px;
             }
-            .menuresponsivo ul{
+
+            .menuresponsivo ul {
                 width: 35vw;
             }
 
 
             form {
-                
+
                 border-radius: 4px;
                 border: 1px solid #333;
                 margin: 20px;
@@ -281,68 +290,65 @@
                 color: white;
             }
 
-            .containerform{
+            .containerform {
                 flex-direction: row;
                 justify-content: flex-end;
             }
 
-            .boxtransacao{
+            .boxtransacao {
                 width: calc(25% - 10px);
             }
 
-            .boxmercadoria{
+            .boxmercadoria {
                 width: calc(50% - 40px);
-                
+
             }
 
-            .boxvalor{
+            .boxvalor {
                 width: calc(25% - 40px);
-                
+
             }
 
-            input{
+            input {
                 height: 3vw;
-                
+
             }
 
-            select{
+            select {
                 height: 3.5vw;
             }
 
-            #buttonadicionar{
+            #buttonadicionar {
                 width: 30%;
-                height: 4vw ;
+                height: 4vw;
                 margin-top: 0px;
+                margin-right: 13px;
             }
 
         }
 
         /* Tablet landscape */
 
-        @media screen and (min-width:1112px) and (max-width: 1499px){
-            
-            .hero{
+        @media screen and (min-width:1112px) {
+
+            .hero {
 
                 display: flex;
 
             }
 
-            .containerextrato{
+            .containerextrato {
 
                 width: 60%;
 
             }
 
-            .contentheader{
+            .contentheader {
 
                 justify-content: end;
 
             }
 
-            table{
-
-                height: 20vw;
-            }
 
 
             div .form {
@@ -351,34 +357,34 @@
 
             }
 
-            .containerform{
-                height: 20vw;
-                justify-content:space-around ;
+            .containerform {
+
+                justify-content: space-around;
             }
 
-            img{
+            img {
 
                 margin-right: 15px;
                 margin-left: 20px;
 
-            }         
+            }
 
             form {
-                
+
                 border-radius: 4px;
                 border: 1px solid #333;
                 margin: 20px;
                 padding: 20px;
                 padding-top: 0px;
             }
-            
+
             form h3 {
                 text-align: center;
                 font-size: 18px;
                 height: 10px;
             }
 
-            
+
 
 
             .menuresponsivo ul {
@@ -387,12 +393,12 @@
                 position: relative;
                 background-color: white;
                 color: #333;
-                width: 532px;
+                width: 510px;
                 height: 40px;
                 margin-top: 20px;
                 padding: 0px;
                 align-items: center;
-                margin-left: 312px;
+                margin-left: 322px;
 
             }
 
@@ -422,120 +428,12 @@
 
             }
 
+            input,
+            select {
 
-        }
-
-        /* NAVEGADOR VERSION */
-
-
-        @media screen and (min-width:1500px) {
-
-
-            .menuresponsivo {
-                width: 25%;
-            }
-
-            .contentheader{
-
-                justify-content: end;
-
-            }
-
-            img{
-
-                margin-right: 15px;
-                margin-left: 20px;
-
-            }    
-
-
-            .menuresponsivo ul {
-                display: flex;
-                flex-direction: row;
-                position: relative;
-                background-color: white;
-                color: #333;
-                width: 532px;
                 height: 40px;
-                margin-top: 20px;
-                padding: 0px;
-                align-items: center;
-                margin-left: 312px;
 
             }
-
-            .menuresponsivo ul li:nth-child(1) {
-                display: none;
-            }
-
-            .menu-hamburguer {
-                display: none;
-            }
-
-            .menuresponsivo ul li {
-                border-left: 1px solid #333;
-                padding-bottom: 0px;
-                padding-top: 0;
-            }
-
-            .menuresponsivo ul li:nth-child(2) {
-
-                border: 0;
-            }
-
-            .menuresponsivo ul li:hover {
-
-                background-color: #c4c4c4;
-                color: #333;
-
-            }
-
-            
-            form {
-                
-                border-radius: 4px;
-                border: 1px solid #333;
-                margin: 20px;
-                padding: 20px;
-                padding-top: 0px;
-            }
-            
-            form h3 {
-                text-align: center;
-                font-size: 18px;
-                height: 10px;
-            }
-
-            .hero{
-
-                display: flex;
-
-            }
-
-            .containerextrato{
-
-                width: 60%;
-
-            }
-
-            table{
-
-                height: 15vw;
-            }
-
-
-            div .form {
-
-                width: 40%;
-
-            }
-
-            .containerform{
-                height: 15vw;
-                justify-content:space-around ;
-            }
-
-
 
 
         }

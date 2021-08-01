@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <title>Controle Financeiro</title>
@@ -24,16 +25,20 @@
                     <div></div>
 
                 </div>
+
                 <ul>
-                    <li>X</li>
+                    <li> <a href="index.html">X</a></li>
                     <li>Cadastro de Transações </li>
-                    <li>Limpar Dados</li>
+                    <li onclick="limparDados()">Limpar Dados</li>
                     <li>Salvar no Servidor</li>
                 </ul>
+
             </div>
         </div>
     </div>
+
     <div class="hero">
+
         <div class="form">
             <form action="">
                 <h3>Nova Transação</h3>
@@ -41,79 +46,73 @@
                     <div class="boxtransacao">
                         <label for="transacao">Tipo de transação</label>
                         <select name="seletor-transacao" id="transacao">
-                            <option value="compra">Compra</option>
-                            <option value="venda">Venda</option>
+                            <option value="-">Compra</option>
+                            <option value="+">Venda</option>
                         </select>
                     </div>
+
                     <div class="boxmercadoria">
                         <label for="mercadoria"> Nome da mercadoria</label>
-                        <input type="text" id="mercadoria" name="mercadoria" placeholder=" Descreva a mercadoria">
+                        <input onkeypress=" mercadoriaempty.innerHTML = '' " type="text" id="mercadoria"
+                            name="mercadoria" placeholder=" Descreva a mercadoria">
+                        <div style="color: red;" id="mercadoriaempty"></div>
                     </div>
+
                     <div class="boxvalor">
                         <label for="valormercadoria">Valor</label>
-                        <input type="number" id="valormercadoria" placeholder=" R$ 0,00">
+                        <input   type="text" onkeyup="mascara()" onkeypress="valorempty.innerHTML = '' "
+                            id="valormercadoria" name="valortransacao" placeholder=" R$ 0,00">
+                        <div style="color: red;" id="valorempty"></div>
                     </div>
-                    <input type="submit" value="Adicionar Transação" id="buttonadicionar">
+
+                    <input onclick="validarform(event)" type="submit" value="Adicionar Transação" id="buttonadicionar">
+
                 </div>
             </form>
 
         </div>
         <div class="containerextrato">
-
             <div class="extratodetransacoes">
-
                 <h3>Extrato De Transacoes</h3>
 
-                <table class="tabelatransacoes">
-                    <tbody>
+                <table>
+
+
+                    <thead>
                         <tr>
                             <th></th>
                             <th>Mercadoria</th>
                             <th class="thleft">Valor</th>
                         </tr>
-                        <tr>
-                            <td class="bordertd" colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <td class="tdright">+</td>
-                            <td>valor mercadoria</td>
-                            <td class="tdleft">R$12.999,99</td>
-                        </tr>
-                        <tr>
-                            <td class="bordertd" colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <td class="tdright">-</td>
-                            <td>custos mercadoria</td>
-                            <td class="tdleft">R$99,99</td>
-                        </tr>
-                        <tr>
-                            <td class="bordertd" colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <td class="tdright">+</td>
-                            <td>taxa mercadoria</td>
-                            <td class="tdleft">R$9,99</td>
-                        </tr>
+                    </thead>
 
+                    <tr>
+                        <td class="bordertd" colspan="3"></td>
+                    </tr>
+                    <tbody class="content-table">
+                        <tr>
+                            <td id="simbolofuncao">*</td>
+                            <td id="tdmercado">Nenhuma Transacao Cadastrada</td>
+                            <td id="tdvalor" class="tdleft">R$ 0,00</td>
+                        </tr>
                         <tr>
                             <td class="borderdouble" colspan="3"></td>
                         </tr>
+                    </tbody>
+                    <tfoot>
                         <tr>
                             <td></td>
                             <td>Total</td>
-                            <td class="tdleft">R$12.909,99</td>
+                            <td id="tdlucro" class="tdleft">R$0,00</td>
                         </tr>
                         <tr>
-                            <td class="tdlucro" colspan="3">[Lucro]</td>
+                            <td class="tdlucro" id="balance" colspan="3">[Lucro]</td>
                         </tr>
-                    </tbody>
+                    </tfoot>
                 </table>
             </div>
         </div>
     </div>
-
-
 
 </body>
 
