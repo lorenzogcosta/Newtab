@@ -1,7 +1,9 @@
 var transacao = [];
+var alunos = []
+var Found = ""
+var Id = ""
 
-
-
+//  valida o formulario e se estiver tudo ok , salva no Local storage
 
 function validarform(e) {
 
@@ -78,10 +80,11 @@ function validarform(e) {
 }
 
 
-
 //  criei com exemplos de MAP e FOR, funcao para listar transacoes adicionadas
 
 function listarextrato() {
+
+
     transacao = JSON.parse(localStorage.getItem('transacao'));
     if (transacao != null) {
         document.querySelector('.content-table').innerHTML = transacao.map((trsc) => {
@@ -102,33 +105,35 @@ function listarextrato() {
 
         }
 
-        )
-            .join('')
+        ).join('')
 
-            total = 0;
-            for (let idx_trsc in transacao) {
-                total += transacao[idx_trsc].valor;
-            }
+
+        total = 0;
+        for (let idx_trsc in transacao) {
+            total += transacao[idx_trsc].valor;
+        }
 
         document.getElementById("tdlucro").innerHTML =
             `
             <td id="tdlucro" class="tdleft">`+ total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + `</td>
             `
 
-            if(total > 0){
-                document.getElementById('balance').innerHTML = "[Lucro]";
-            }
-            if(total < 0){
-                document.getElementById('balance').innerHTML = "[Prejuizo]";
-            }
+        if (total > 0) {
+            document.getElementById('balance').innerHTML = "[Lucro]";
+        }
+        if (total < 0) {
+            document.getElementById('balance').innerHTML = "[Prejuizo]";
+        }
 
-            if(total == 0){
-                document.getElementById('balance').innerHTML = "[Balancete]";
-            }
+        if (total == 0) {
+            document.getElementById('balance').innerHTML = "[Balancete]";
+        }
+
 
     }
-}
 
+
+}
 
 
 
@@ -140,9 +145,9 @@ function limparDados(trsc) {
     localStorage.setItem('transacao', JSON.stringify(transacao));
     listarextrato();
     document.getElementById('tdlucro').innerHTML = "R$0,00";
-    if(transacao = []){
-        document.querySelector('.content-table').innerHTML = 
-        ` <tbody class="content-table">
+    if (transacao = []) {
+        document.querySelector('.content-table').innerHTML =
+            ` <tbody class="content-table">
         <tr>
             <td id="simbolofuncao">*</td>
             <td id="tdmercado">Nenhuma Transacao Cadastrada</td>
@@ -158,9 +163,7 @@ function limparDados(trsc) {
 }
 
 
-
 // mascara monetaria do input valor do form
-// * corrigir valor apos a virgula, nao esta sendo captado pelo extrato
 
 function mascara() {
     var elemento = document.getElementById("valormercadoria");
@@ -184,6 +187,100 @@ function mascara() {
         elemento.value = '';
     }
 }
+
+// Salvar na Api, requestoptions manual,
+
+
+function SalvarTrsc() {
+
+
+    fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+
+        headers: {
+            Authorization: 'Bearer key2CwkHb0CKumjuM',
+        }
+    }).then((resp) => {
+        return resp.json()
+    }).then((data) => {
+        alunos = data.records
+
+        alunos.map((aluno) => {
+
+
+            if (aluno.fields.Aluno == "3809") {
+
+                Found = aluno.fields.Aluno;
+                Id = aluno.id;
+
+
+            }
+
+
+
+        })
+    }).then(() => {
+
+        console.log("Aluno=" + Found + " ID=" + Id)
+
+        if (Found == "3809") {
+
+            console.log("entrou PATCH")
+
+
+            fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+                method: "PATCH",
+                headers: {
+                    Authorization: 'Bearer key2CwkHb0CKumjuM',
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify({
+
+                    "records": [
+                        {
+                            "id": Id,
+                            "fields": {
+                                "Aluno": "3809",
+                                "Json": JSON.stringify(transacao),
+                            }
+                        }
+                    ]
+
+                })
+            });
+        }else{
+
+            console.log("entrou POST")
+        
+            fetch('https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico', {
+                method: "POST",
+                headers: {
+                    Authorization: 'Bearer key2CwkHb0CKumjuM',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+        
+                    "records": [
+                        {
+                            "fields": {
+                                "Aluno": "3809",
+                                "Json": JSON.stringify(transacao),
+                            }
+                        }
+                    ]
+        
+                })
+            })
+        }
+
+    })
+
+
+    alert("salvo com sucesso")
+
+}
+
+
+
 
 
 
