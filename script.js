@@ -193,6 +193,7 @@ function mascara() {
 
 function SalvarTrsc() {
 
+    if( transacao.length > 0){
 
     fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
 
@@ -276,6 +277,9 @@ function SalvarTrsc() {
 
 
     alert("salvo com sucesso")
+}else{
+    alert('Nenhuma transacao a ser salva')
+}
 
 }
 
